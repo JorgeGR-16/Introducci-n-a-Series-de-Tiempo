@@ -215,8 +215,8 @@ if model_type != 'Ninguno':
             model_train = Holt(train['y']).fit()
             pred = model_train.forecast(len(test))
         
-        # Calcular MAPE
-        mape = np.mean(np.abs((test['y'] - pred) / test['y']) * 100
+        # Calcular MAPE (línea corregida)
+        mape = np.mean(np.abs((test['y'] - pred) / test['y'])) * 100
         st.write(f"Error de predicción (MAPE) en datos de prueba: {mape:.2f}%")
 
 # --- ESTADÍSTICAS DESCRIPTIVAS ---
