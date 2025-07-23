@@ -219,11 +219,3 @@ if model_type != 'Ninguno':
         mape = np.mean(np.abs((test['y'] - pred) / test['y'])) * 100
         st.write(f"Error de predicción (MAPE) en datos de prueba: {mape:.2f}%")
 
-# --- ESTADÍSTICAS DESCRIPTIVAS ---
-st.header("Estadísticas Descriptivas")
-st.dataframe(country_data[['Confirmed', 'Daily_Cases']].describe())
-
-# --- DATOS CRUDOS ---
-if st.checkbox("Mostrar datos crudos"):
-    st.subheader("Datos crudos")
-    st.dataframe(country_data)
